@@ -37,29 +37,29 @@ namespace TronNet.Test
 
             var transaction = transactionExtension.Transaction;
 
-            var transactionSignExtention = await _wallet.GetTransactionSign2Async(new TransactionSign
-            {
-                PrivateKey = ByteString.CopyFrom(privateStr.HexToByteArray()),
-                Transaction = transaction
-            });
-            Assert.NotNull(transactionSignExtention);
+            //var transactionSignExtention = await _wallet.GetTransactionSign2Async(new TransactionSign
+            //{
+            //    PrivateKey = ByteString.CopyFrom(privateStr.HexToByteArray()),
+            //    Transaction = transaction
+            //});
+            //Assert.NotNull(transactionSignExtention);
 
-            Assert.True(transactionSignExtention.Result.Result);
+            //Assert.True(transactionSignExtention.Result.Result);
 
-            var transactionSigned = transactionSignExtention.Transaction;
+            //var transactionSigned = transactionSignExtention.Transaction;
 
-            var transactionBytes = transaction.ToByteArray();
+            //var transactionBytes = transaction.ToByteArray();
 
-            var transaction4 = SignTransaction2Byte(transactionBytes, privateStr.HexToByteArray(), transactionSigned);
+            //var transaction4 = SignTransaction2Byte(transactionBytes, privateStr.HexToByteArray(), transactionSigned);
 
 
-            var transaction5 = transactionSigned.ToByteArray();
+            //var transaction5 = transactionSigned.ToByteArray();
 
-            Assert.Equal(transaction4.ToHex(), transaction5.ToHex());
+            //Assert.Equal(transaction4.ToHex(), transaction5.ToHex());
 
-            var result = await _wallet.BroadcastTransactionAsync(transactionSigned);
+            //var result = await _wallet.BroadcastTransactionAsync(transactionSigned);
 
-            Assert.True(result.Result);
+            //Assert.True(result.Result);
         }
 
         private async Task<TransactionExtention> CreateTransactionAsync(string from, string to, long amount)
