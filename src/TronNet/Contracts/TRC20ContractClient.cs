@@ -95,7 +95,7 @@ namespace TronNet.Contracts
             }
 
             var transaction = transactionExtention.Transaction;
-
+            
             if (transaction.Ret.Count > 0 && transaction.Ret[0].Ret == Transaction.Types.Result.Types.code.Failed)
             {
                 throw new Exception("transaction fail");
